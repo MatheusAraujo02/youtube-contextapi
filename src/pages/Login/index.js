@@ -4,18 +4,26 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-nativ
 import { AuthContext } from '../../contexts/auth';
 
 export default function Login() {
+ const [name, setName] = useState('');
  const [email, setEmail] = useState('');
  const [password, setPassword] = useState('');
 
  const { signIn } = useContext(AuthContext)
 
  function handleLogin(){
-  signIn(email, password)
+  signIn(email, password, name)
  }
 
  return (
    <View style={styles.container}>
      <Text style={styles.title}>Seja bem vindo(a)!</Text>
+
+     <TextInput
+        style={styles.input}
+        value={name}
+        onChangeText={(text) => setName(text)}
+        placeholder="Digite seu nome"
+     />
 
      <TextInput
         style={styles.input}

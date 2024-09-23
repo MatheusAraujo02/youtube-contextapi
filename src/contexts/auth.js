@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -11,8 +11,9 @@ function AuthProvider({children}){
   function signIn(email, password){
     if(email !== '' && password !== ''){
       setUser({
-        email:email,
-        status: ATIVO
+        email: email,
+        status: 'ATIVO',
+        nome: name
       })
 
       navigation.navigate('Home');
@@ -21,7 +22,7 @@ function AuthProvider({children}){
 
 
   return(
-    <AuthContext.Provider value={{nome:'Matheus de Araujo', signIn, user}}>
+    <AuthContext.Provider value={{  signIn, user}}>
       {children}
     </AuthContext.Provider>
   )

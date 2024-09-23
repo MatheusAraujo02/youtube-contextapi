@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
-import { useContext } from 'react';
+
 
 export default function Home() {
   const navigation = useNavigation();
@@ -12,7 +12,7 @@ export default function Home() {
   return (
    <View style={styles.container}>
      <Text>Pagina Home</Text>
-     <Text>Bem vindo: {user.email}</Text>
+     <Text>Bem vindo: {user.email} </Text>
 
      <Button 
      title="Acessar pedidos"

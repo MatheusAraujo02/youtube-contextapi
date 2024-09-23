@@ -4,12 +4,12 @@ import { AuthContext } from '../../contexts/auth';
 
 export default function Pedidos() {
 
-  const { nome, user } = useContext(AuthContext);
+  const {  user } = useContext(AuthContext);
 
  return (
    <View style={styles.container}>
      <Text>Pagina Pedidos</Text>
-     <Text>Nome: { nome }</Text>
+     <Text>Nome: { user.name }</Text>
      <Text>Email logado: { user.email }</Text>
      <Text>Status {user.status}</Text>
    </View>
